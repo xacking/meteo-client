@@ -1,0 +1,32 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "meteo-client"
+version = "0.1.0"
+description = "Typed client for the free Open-Meteo weather API"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.9"
+keywords = ["weather", "open-meteo", "forecast", "api-client"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Typing :: Typed",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.urls]
+Homepage = "https://github.com/xacking/meteo-client"
+Issues = "https://github.com/xacking/meteo-client/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/meteo_client"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
